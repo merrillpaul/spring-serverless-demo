@@ -1,7 +1,9 @@
+
 plugins {
 	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'groovy'
 }
+
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'groovy'
@@ -23,19 +25,24 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	// Spring Boot's JPA support
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('org.springframework.boot:spring-boot-starter-web')
 
 	implementation 'org.codehaus.groovy:groovy'
 	implementation 'org.postgresql:postgresql'
+	implementation 'com.amazonaws.serverless:aws-serverless-java-container-spring:1.1'
 	implementation 'com.amazonaws:aws-lambda-java-core:1.1.0'
     implementation 'com.amazonaws:aws-lambda-java-log4j:1.0.0'
     implementation name: 'techopstomcat-1.0'
+	implementation 'org.yaml:snakeyaml'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'    
+	testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+	implementation 'org.apache.commons:commons-lang3:3.4'
+	runtime 'org.springframework:springloaded:1.2.4.RELEASE'
 }
 
 
 task buildZip(type: Zip) {
-    baseName = "spring-serverless-demo"
+	archiveName = "spring-serverless-demo.zip"
     from compileJava
 	from compileGroovy
     from processResources
@@ -45,3 +52,5 @@ task buildZip(type: Zip) {
 }
 
 build.dependsOn buildZip
+
+bootRun.dependsOn build

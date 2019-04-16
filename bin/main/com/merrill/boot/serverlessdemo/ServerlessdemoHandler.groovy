@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class ServerlessdemoApplication {
+class ServerlessdemoHandler {
 
 	static void main(String[] args) {
-		SpringApplication.run(ServerlessdemoApplication, args)
+		SpringApplication.run(ServerlessdemoHandler, args)
 	}
 
 }

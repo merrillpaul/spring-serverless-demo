@@ -1,0 +1,17 @@
+
+server:
+  port: 9999
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        temp.use_jdbc_metadata_defaults: false
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/chairdev"
+    username: eclick_owner
+    password: pearson
+

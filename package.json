@@ -8,6 +8,8 @@
     "clean": "rimraf lib && rimraf coverage && ./gradlew clean",
     "build": "./gradlew build",
     "deploy": "npm run clean && npm run build && ./deploy_serverless",
+    "localstack": "concurrently --names \"LOCALSTACK,SPRING_BOOT\" -c \"yellow,bgGreen\" --kill-others-on-fail \"DEBUG=1 localstack start\" \"npm run deploy local\"",
+    "local": "./gradlew bootRun",
     "preclean": "npm i",
     "prebuild": "npm i",
     "predeploy": "npm i"
@@ -16,6 +18,8 @@
   "devDependencies": {
     "rimraf": "^2.0.0",
     "serverless": "^1.32.0",
-    "serverless-offline": "^3.27.0"
+    "serverless-localstack": "^0.4.12",
+    "serverless-offline": "^3.27.0",
+    "concurrently": "^4.0.1"
   }
 }
