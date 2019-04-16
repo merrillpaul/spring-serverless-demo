@@ -16,10 +16,10 @@
   },
   "author": "",
   "devDependencies": {
+    "concurrently": "^4.0.1",
     "rimraf": "^2.0.0",
-    "serverless": "^1.32.0",
+    "serverless": "^1.40.0",
     "serverless-localstack": "^0.4.12",
-    "serverless-offline": "^3.27.0",
-    "concurrently": "^4.0.1"
+    "serverless-offline": "^4.9.4"
   }
 }

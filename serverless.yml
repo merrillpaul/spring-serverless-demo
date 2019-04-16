@@ -21,15 +21,17 @@ custom:
   defaults:
     stage: qa
   localstack:
-    host: http://localhost:8000
+    host: http://localhost
+    debug: true
     stages:
       - local
     #autostart: true
-    endpoints:
-      #S3: http://localhost:4572
+    #endpoints:
+     # S3: http://localhost:4572
       #Lambda: http://localhost:4574
+      #CloudFormation: http://localhost:4581
     lambda:
-      mountCode: true     
+      #mountCode: true
 
 plugins:
  - serverless-offline
